@@ -1,0 +1,25 @@
+curl -X POST -H "Content-Type: application/json" -d '{"description": "first", "time": "2024-01-01", "id": 1}' 'http://0.0.0.0:8000/events'
+
+curl -X POST -H "Content-Type: application/json" -d '{"description": "second", "time": "2024-02-01", "id": 2}' 'http://0.0.0.0:8000/events'
+
+curl -X POST -H "Content-Type: application/json" -d '{"description": "third", "time": "2024-03-01", "id": 3}' 'http://0.0.0.0:8000/events'
+
+curl -X POST -H "Content-Type: application/json" -d '{"description": "fourth", "time": "2024-04-01", "id": 4}' 'http://0.0.0.0:8000/events'
+
+curl -X GET -H "Content-Type: application/json" 'http://0.0.0.0:8000/events?datetime_format=2024-02-01'
+
+
+curl -X GET -H "Content-Type: application/json" 'http://0.0.0.0:8000/events?from_time=2024-01-01&to_time=2024-04-01'
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"description": "fourth", "time": "2024-08-29T12:00:00", "id": 10}' 'http://0.0.0.0:8000/events'
+
+
+curl -X GET -H "Content-Type: application/json" 'http://0.0.0.0:8000/events?to_time=2024-12-01'
+
+curl -X GET -H "Content-Type: application/json" 'http://0.0.0.0:8000/events?from_time=2024-04-01&to_time=2024-05-01'
+
+curl -X GET -H "Content-Type: application/json" 'http://0.0.0.0:8000/events?datetime_format=2024-05-01'
+
+
+curl -X GET -H "Content-Type: application/json" 'http://0.0.0.0:8000/events'
